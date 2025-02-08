@@ -1,12 +1,12 @@
 USE mavenmovies;
 
--- Q1. Identify the primary keys and foreign keys in maven movies db. Discuss the differences
--- A1. A Primary key is a column (or set of columns) in a table that uniquely identifiles each row, Whereas a Foreign key is a column (or set of columns) in a table that helps to connect two or more tables.
+-- Q1. Identify the primary keys and foreign keys in Maven movies db. Discuss the differences
+-- A1. A Primary key is a column (or set of columns) in a table that uniquely identifies each row, Whereas a Foreign key is a column (or set of columns) in a table that helps to connect two or more tables.
 SELECT *
 FROM information_schema.key_column_usage;
 
 
--- Q2. List all details of actors
+-- Q2. List all details of the actors
 -- A2.
 SELECT *
 FROM actor;
@@ -30,7 +30,7 @@ FROM customer
 WHERE active = 1;
 
 
--- Q6. List of all rental IDs for customer with ID 1.
+-- Q6. List of all rental IDs for customers with ID 1.
 -- A6.
 SELECT rental_id
 FROM rental
@@ -43,7 +43,7 @@ SELECT title
 FROM film
 WHERE rental_duration > 5;
 
--- Q8. List the total number of films whose replacemnet cost is greater than $15 and less than  $20.
+-- Q8. List the total number of films whose replacement cost is greater than $15 and less than  $20.
 -- A8.
 SELECT count(*)
 FROM film
@@ -55,7 +55,7 @@ AND replacement_cost < 20;
 SELECT count(DISTINCT first_name)
 FROM actor;
 
--- Q10. Display the first 10 recods from the customer table
+-- Q10. Display the first 10 records from the customer table
 -- A10.
 SELECT *
 FROM customer
@@ -70,7 +70,7 @@ LIKE "b%"
 LIMIT 3;
 
 
--- Q12. Display the names of first 5 movies which are rated as G.
+-- Q12. Display the names of the first 5 movies which are rated as G.
 -- A12.
 SELECT title
 FROM film
@@ -94,7 +94,7 @@ WHERE first_name
 LIKE "%a";
 
 
--- Q15. Display the list of first 4 cities which start and end with ‘a’.
+-- Q15. Display the list of the first 4 cities which start and end with ‘a’.
 -- A15.
 SELECT city
 FROM city
@@ -119,7 +119,7 @@ WHERE first_name
 LIKE "_r%";
 
 
--- Q18. Find all customers whose first name starts with "a" and are at least 5 characters in length.
+-- Q18. Find all customers whose first name starts with "a" and is at least 5 characters long.
 -- A18.
 SELECT first_name
 FROM customer
@@ -135,7 +135,7 @@ WHERE first_name
 LIKE "a%o";
 
 
--- Q20. Get the films with pg and pg-13 rating using IN operator.
+-- Q20. Get the films with pg and pg-13 ratings using the IN operator.
 -- A20. 
 SELECT title
 FROM film
@@ -143,7 +143,7 @@ WHERE rating
 IN ("PG", "PG-13");
 
 
--- Q21. Get the films with length between 50 to 100 using between operator.
+-- Q21. Get the films with lengths between 50 and 100 using between operators.
 -- A21.
 Select title
 FROM film
@@ -151,13 +151,13 @@ WHERE length
 BETWEEN 50 AND 100;
 
 
--- Q22. Get the top 50 actors using limit operator.
+-- Q22. Get the top 50 actors using the limit operator.
 -- A22.
 SELECT *
 FROM actor
 LIMIT 50;
 
--- Q23. Get the distinct film ids from inventory table.
+-- Q23. Get the distinct film IDs from the inventory table.
 -- A23. 
 SELECT DISTINCT film_id
 from inventory;
